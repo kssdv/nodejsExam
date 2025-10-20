@@ -18,6 +18,7 @@ let users = [
     {id: 3, name: 'Charlie'}
 ];
 
+// ex) http://localhost:3000/api/users
 // API 엔드포인트(Endpoint) 및 라우팅(Routing) 설정
 // GET /api/users : 모든 사용자 목록을 JSON으로 응답
 app.get('/api/users', (req, res) => {
@@ -26,6 +27,7 @@ app.get('/api/users', (req, res) => {
     res.json(users);
 });
 
+// ex) http://localhost:3000/api/users/1
 // GET api/users/:id 특정 ID의 사용자를 JSON으로 응답
 // app.get('/api/users/:id', (res,req) => {
     app.get('/api/users/:id', (req,res) => {
