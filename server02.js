@@ -27,7 +27,8 @@ app.get('/api/users', (req, res) => {
 });
 
 // GET api/users/:id 특정 ID의 사용자를 JSON으로 응답
-app.get('/api/users/:id', (res,req) => {
+// app.get('/api/users/:id', (res,req) => {
+    app.get('/api/users/:id', (req,res) => {
     // URL 파라미터에서 id 값을 가져옵니다. (문자열이므로 숫자로 변환)
     const userId = parseInt(req.params.id);
     const user = users.find(u => u.id === userId);
@@ -41,7 +42,7 @@ app.get('/api/users/:id', (res,req) => {
 });
 
 // POST /api/users : 새 사용자를 추가하고 결과를 JSON으로 응답
-app.post('/api/users', (res,req) => {
+app.post('/api/users', (req,res) => {
     // express.json() 미들웨어 덕분에 req.body에서 클라이언트가 보낸 JSON 데이터에 접근할 수 있다.
     const newUser = req.body;
 
